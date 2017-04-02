@@ -14,8 +14,8 @@ def main():
             for (index,place) in enumerate(places.readlines()):
                 print (index,place,end="")
         places.close()
-    except FileNotFoundError as e:
-        print ("File not found {}".format(e))
+    except FileNotFoundError:
+        print ("File not found")
     
 if __name__ == "__main__":
     main()
