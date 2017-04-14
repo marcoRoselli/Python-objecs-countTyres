@@ -1,0 +1,29 @@
+#!/usr/bin/python3
+#using multiple args
+
+def main():
+    for index in AnotherRangeFunctions(1,10,2):
+        print(index,end="\n")
+        
+def AnotherRangeFunctions(*args):
+    numberOfArguments = len(args)
+    if numberOfArguments < 1:
+        raise TypeError('At least one argument is required')
+    elif numberOfArguments == 1:
+        stop = args[0]
+        start = 0
+        step = 1
+    elif numberOfArguments == 2:
+        (start,stop) = args
+        step = 1
+    elif numberOfArguments == 3:
+        (start,stop,step) = args
+
+            
+    i = start
+    while i <= stop:
+        yield i
+        i += step
+
+main()
+
